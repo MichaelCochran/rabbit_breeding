@@ -1,0 +1,13 @@
+# For SQLite
+sqlite==3.36.0
+
+# Development Dependencies
+[dev]
+pytest==7.7.3
+
+# Python Version
+python_version>=3.9
+
+# PyQt5
+PyQt5==5.15.5
+PyQtWebEngine==5.15.5

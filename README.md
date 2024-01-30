@@ -23,8 +23,9 @@ I included an extra that this program could have done without, but it makes it l
 
 To install the required packages:
 
-'''$ pip install -r requirements.txt'''
-
+```
+$ pip install -r requirements.txt
+```
 # Future Work
 
 - This program could be adapted to help track other animals that could be found on a farm/homestead including goats, pigs, cows, etc.
