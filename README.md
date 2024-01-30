@@ -19,6 +19,12 @@ I included an extra that this program could have done without, but it makes it l
 - [SQLite](https://www.sqlitetutorial.net/)
 - [TutorialsPoint](https://www.tutorialspoint.com/sqlite/sqlite_python.htm)
 
+# Requirements
+
+To install the required packages:
+
+'''$ pip install -r requirements.txt'''
+
 # Future Work
 
 - This program could be adapted to help track other animals that could be found on a farm/homestead including goats, pigs, cows, etc.
