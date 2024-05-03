@@ -1,6 +1,8 @@
 # Overview
 
-This is a database that can store information regarding the breeding of rabbits. It helps to track which buck and which doe are being the most productive. By knowing which animals are most productive, you know which animals to keep breeding for the best gains.
+This is a project that began its life as an assignment for school that I have gone back to improve and see if I can make perform as well as I originally would have liked for it to but I was not able at the time because of the lack of knowledge. It is a database that can store information regarding the breeding of rabbits. It helps to track which buck and which doe are being the most productive. By knowing which animals are most productive, you know which animals to keep breeding for the best gains.
+
+Since this is continued from an assignement there will be some large changes from the following video, but it shows how it behaved at the time of submission for class. When the time comes that I feel like I have finished this project I will share a different video showcasing the improvements made.
 
 [Software Demo Video](https://youtu.be/5o7wtbrOkB0)
 
@@ -19,13 +21,6 @@ I included an extra that this program could have done without, but it makes it l
 - [SQLite](https://www.sqlitetutorial.net/)
 - [TutorialsPoint](https://www.tutorialspoint.com/sqlite/sqlite_python.htm)
 
-# Requirements
-
-To install the required packages:
-
-```
-$ pip install -r requirements.txt
-```
 # Future Work
 
 - This program could be adapted to help track other animals that could be found on a farm/homestead including goats, pigs, cows, etc.
