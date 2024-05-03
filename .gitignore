@@ -6,3 +6,8 @@ venv/
 rabbits.db
 
 rabbits/
+
+testing.py
+dump.py
+db_dump.py
+purge_db.py
