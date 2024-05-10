@@ -2,7 +2,6 @@ import sqlite3
 import sys
 import os
 from datetime import datetime, timedelta
-import time
 
 con = sqlite3.connect("rabbits.db")
 cur = con.cursor()
@@ -24,8 +23,9 @@ def view():
             print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
             # Print data in the table
             rows = cur.fetchall()
-            for row in rows:
-                print("\t".join(map(str, row)))
+            for row in cur.execute("SELECT * FROM rabbits"):
+                print("\t".join(str(cell) for cell in row))
+            print("\n")
             return
 
 def create_tables(cur):
@@ -80,8 +80,9 @@ def insert_data(name, bred, buck, palpitating, nest, due, comments):
         # Handle exceptions gracefully
         print("Error:", e)
     finally:
-        # Return to the main options after a brief delay
-        time.sleep(2)
+        # Return to the main options after a button press
+        print("\n Press any key to continue ... \n")
+        input()
         clear()
 
     return
