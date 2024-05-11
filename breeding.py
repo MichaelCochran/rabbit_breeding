@@ -20,13 +20,14 @@ def later_date(input_date, days):
 
 # Outputs the information stored in the database
 def view():
-            print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
-            # Print data in the table
-            rows = cur.fetchall()
-            for row in cur.execute("SELECT * FROM rabbits"):
-                print("\t".join(str(cell) for cell in row))
-            print("\n")
-            return
+    print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
+    # Print data in the table
+    rows = reversed(cur.execute("SELECT * FROM rabbits").fetchall())
+
+    for row in rows:
+        print("\t".join(str(cell) for cell in row))
+    print("\n")
+    return
 
 def create_tables(cur):
     # Create table for the females with certain criterion
