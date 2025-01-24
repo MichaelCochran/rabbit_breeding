@@ -1,6 +1,5 @@
 # For SQLite
-sqlite==3.36.0
+sqlite
 
 # Development Dependencies
-pytest==7.7.3
-
+pytest
