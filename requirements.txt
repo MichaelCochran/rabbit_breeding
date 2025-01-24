@@ -1,5 +1,2 @@
-# For SQLite
-sqlite
-
 # Development Dependencies
 pytest
