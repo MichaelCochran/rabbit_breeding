@@ -3,6 +3,8 @@
 env/
 venv/
 
+.idea/
+
 rabbits.db
 
 rabbits/
