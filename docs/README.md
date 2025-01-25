@@ -16,5 +16,5 @@ There is currently a table for information for the rabbits. This table contains 
 - This program could be adapted to help track other animals that could be found on a farm/homestead including goats, pigs, cows, etc.
 - A GUI would make this program more appealing to most users.
 - I need to add a way to edit information that is saved to the tables.
-- I should separate some of the information inserted into the female table so that it is not all entered at the beginning. Maybe move that information to a new table.
 - I need to find a better way to handle the database as a whole; open, close, etc. needs to be done better.
+- Suggestions/input from farmers would be considered and added if the benefit is there. This means finding a way to survey a group of "hobby" farmers and homesteaders as a start.
