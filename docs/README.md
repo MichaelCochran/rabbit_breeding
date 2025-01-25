@@ -1,20 +1,19 @@
 # Overview
 
-This is a project that began its life as an assignment for school that I have gone back to improve and see if I can make perform as well as I originally would have liked for it to but I was not able at the time because of the lack of knowledge and time. It is a database that can store information regarding the breeding of rabbits. It helps to track which buck and which doe are being the most productive. By knowing which animals are most productive, you know which animals to keep breeding for the best gains.
+Animal Breeding is a tool designed to help farmers and breeders track and optimize the productivity of their livestock. Initially focused on rabbits, the software has expanded to support goats, cows, pigs, and rabbits, with the potential to include additional species based on user interest.  
 
 # Relational Database
 
-There is currently a table for information for the rabbits. This table contains the name/identier of the female and the male,date of the breeding, and important dates to be aware of.
-
-# Useful Websites
-
-- [SQLite](https://www.sqlitetutorial.net/)
-- [TutorialsPoint](https://www.tutorialspoint.com/sqlite/sqlite_python.htm)
+As this project is intended to be used with multiple species on the farm, there will be a separate database for each species. Within the database there will be information about the mating pair along with calculations for gestation and other vital information that will be unique to each species. For example rabbits have a date where you palpatae the female to see if she is pregnant at about 2 weeks after breeding. However, with cows, you must wait until 5 weeks to palpatate the female to see if she is pregnant. 
 
 # Future Work
 
-- This program could be adapted to help track other animals that could be found on a farm/homestead including goats, pigs, cows, etc.
-- A GUI would make this program more appealing to most users.
-- I need to add a way to edit information that is saved to the tables.
-- I need to find a better way to handle the database as a whole; open, close, etc. needs to be done better.
-- Suggestions/input from farmers would be considered and added if the benefit is there. This means finding a way to survey a group of "hobby" farmers and homesteaders as a start.
+- Expand to additional livestock based on user feedback and interest.  
+- Develop a graphical user interface (GUI) for mobile and desktop.  
+- Enhance analytics and reporting features.
+
+## Scope and Limitations  
+- **Current Scope**: CLI-based tracking for goats, cows, pigs, and rabbits.  
+- **Limitations**: No advanced tracking features (e.g., lactation data) or poultry support at this time.  
+
+Feedback and suggestions are welcome to help shape the future of the tool! 
