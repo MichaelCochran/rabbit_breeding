@@ -1,14 +1,12 @@
 import sqlite3
 import sys
-import os
 from datetime import datetime, timedelta
+
+from utils import Utils
 
 con = sqlite3.connect("rabbits.db")
 cur = con.cursor()
 
-# See what system is running to use appropriate command to clear the screen
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def later_date(input_date, days):
     # Convert input_date string to a datetime object
@@ -43,7 +41,7 @@ def create_tables(cur):
     ''')
     
 def gather_data():
-    clear()
+    Utils.clear()
     print("Please enter the following information.")
 
     # Define questions and corresponding keys
@@ -83,15 +81,15 @@ def insert_data(name, bred, buck, palpitating, nest, due, comments):
         # Return to the main options after a button press
         print("\n Press any key to continue ... \n")
         input()
-        clear()
+        Utils.clear()
 
     return
 
 
 if __name__ == "__main__":
     create_tables(cur)
-    
-    clear()
+
+    Utils.clear()
 
     # Print blank line before anything happens and then look for input for view or input data and call appropriate function
     print("")
@@ -101,10 +99,10 @@ if __name__ == "__main__":
             print("\n")
             gather_data()
         elif input_or_view == "v":
-            clear()
+            Utils.clear()
             view()
         elif input_or_view == "e":
-            clear()
+            Utils.clear()
             con.close()
             sys.exit()
         else:
