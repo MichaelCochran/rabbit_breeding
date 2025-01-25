@@ -9,7 +9,7 @@ No specific assumptions were provided.
 No specific constraints were provided.
 
 #### 1.3 System Environment
-The software will initially be released for PC and Mac users. Python 3.x must be installed. There is no need for internet or network connectivity. Plans to expand to mobile devices in the future have been mentioned.
+The software will initially be released for PC and Mac users. The latest version of Python is recommended to ensure proper functionality. There is no need for internet or network connectivity at this time. Plans to expand to mobile devices in the future have been mentioned.
 
 ## 2. Architecture
 

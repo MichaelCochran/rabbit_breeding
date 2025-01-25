@@ -2,16 +2,28 @@
 
 
 ## 1. Introduction
-*In this section provide introductory details about the software (application, system, etc.). This can include where the inspiration for the initial idea originated.*
+Rabbit Breeding is a software tool designed to help rabbit breeders track the productivity of their rabbits. 
+The idea originated as a way to minimize wasted resources on unproductive rabbits by identifying which pairings are the most and least productive. 
+The primary goal is to record and analyze rabbit pairings to avoid breeding unsuccessful pairs and to remove underperforming rabbits from the breeding pool.
 
 ## 2. Product / Solution Overview
-*In this section provide an overview of what solutions are provided by the software. Who is the target audience? How will the software help them? What are the expected improvements (time, efficiency, ease of access, etc) to be expected by the target audience?*
+This software is targeted primarily at rabbit breeders, with plans to expand its usability to other small-scale livestock breeders in the future. 
+The expected improvements include a reduction in time wasted on unsuccessful pairings and the ability to identify unproductive rabbits more efficiently. 
+Currently, the software is a command-line interface (CLI) tool, with plans to develop a graphical user interface (GUI) in the future. 
+The GUI will likely be a mobile app, allowing farmers to input data conveniently while monitoring mating pairs, with potential cross-platform support for desktop access.
 
 ## 3. Business Needs / Requirements
-*Provide here a brief overview of the user requirements/needs that the software will solve. The detailed list of requirements will be outlined in the requirements document.*
+The software currently tracks the following data:
+- Rabbit pairings
+- Date of breeding
+- Gestation-related dates 
+
+A study will be launched at a later date to help determine the improvements needed as this project morphs into the larger goal, a tool to track all common farm animals and the related data.
 
 ## 4. Major Features
 *Many applications or systems have multiple parts and features. Here describe briefly each of the major features that will provide the user with functionality.*
 
 ## 5. Scope and Limitations
-*It is good to define a scope for software development to avoid excess feature drift and detect when potential redesign maybe needed due to an increasing scope. Also, list the limitations of the proposed architecture in order to identify some of the shortfalls of the proposed system.*
+- The current scope of the software is limited to tracking basic breeding data for rabbits. 
+- Future expansions include adding a GUI, mobile app support, and cross-platform accessibility. 
+- Limitations include the lack of advanced data tracking and reporting features in the current CLI version, which will be addressed in future updates.
