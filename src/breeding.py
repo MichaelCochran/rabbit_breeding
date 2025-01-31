@@ -1,11 +1,14 @@
-import sqlite3
+<<<<<<< Tabnine <<<<<<<
+import sqlite3#-
 import sys
 from datetime import datetime, timedelta
 
 from utils import Utils
+from database_helper import DatabaseHelper#+
 
-con = sqlite3.connect("rabbits.db")
-cur = con.cursor()
+con = sqlite3.connect("rabbits.db")#-
+cur = con.cursor()#-
+db = DatabaseHelper("rabbits.db")#+
 
 
 def later_date(input_date, days):
@@ -18,28 +21,34 @@ def later_date(input_date, days):
 
 # Outputs the information stored in the database
 def view():
-            print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
-            # Print data in the table
-            rows = cur.fetchall()
-            for row in cur.execute("SELECT * FROM rabbits"):
-                print("\t".join(str(cell) for cell in row))
-            print("\n")
-            return
+            print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")#-
+            # Print data in the table#-
+            rows = cur.fetchall()#-
+            for row in cur.execute("SELECT * FROM rabbits"):#-
+                print("\t".join(str(cell) for cell in row))#-
+            print("\n")#-
+            return#-
+    print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")#+
+    rows = db.view_data()#+
+    for row in rows:#+
+        print("\t".join(str(cell) for cell in row))#+
+    print("\n")#+
 
-def create_tables(cur):
-    # Create table for the females with certain criterion
-    cur.execute('''
-        CREATE TABLE IF NOT EXISTS rabbits (
-            name TEXT,
-            last_bred TEXT,
-            buck TEXT,
-            palpatate TEXT,
-            nest_date TEXT,
-            due_date TEXT,
-            comments TEXT
-        )
-    ''')
-    
+def create_tables(cur):#-
+    # Create table for the females with certain criterion#-
+    cur.execute('''#-
+        CREATE TABLE IF NOT EXISTS rabbits (#-
+            name TEXT,#-
+            last_bred TEXT,#-
+            buck TEXT,#-
+            palpatate TEXT,#-
+            nest_date TEXT,#-
+            due_date TEXT,#-
+            comments TEXT#-
+        )#-
+    ''')#-
+
+#+
 def gather_data():
     Utils.clear()
     print("Please enter the following information.")
@@ -65,29 +74,36 @@ def gather_data():
     print(palpatating, nest, due)
 
     # Insert data
-    insert_data(data["name"], data["bred"], data["buck"], palpatating, nest, due, data["comments"])
+    insert_data(data["name"], data["bred"], data["buck"], palpatating, nest, due, data["comments"])#-
+    db.insert_data(data["name"], data["bred"], data["buck"], palpatating, nest, due, data["comments"])#+
 
-def insert_data(name, bred, buck, palpitating, nest, due, comments):
-    try:
-        # Insert a row of data
-        cur.execute("INSERT INTO rabbits VALUES (?, ?, ?, ?, ?, ?, ?)", (name, bred, buck, palpitating, nest, due, comments))
-        # Save (commit) the changes to the database
-        con.commit()
-        print("\nData added to file")
-    except Exception as e:
-        # Handle exceptions gracefully
-        print("Error:", e)
-    finally:
-        # Return to the main options after a button press
-        print("\n Press any key to continue ... \n")
-        input()
-        Utils.clear()
+def insert_data(name, bred, buck, palpitating, nest, due, comments):#-
+    try:#-
+        # Insert a row of data#-
+        cur.execute("INSERT INTO rabbits VALUES (?, ?, ?, ?, ?, ?, ?)", (name, bred, buck, palpitating, nest, due, comments))#-
+        # Save (commit) the changes to the database#-
+        con.commit()#-
+        print("\nData added to file")#-
+    except Exception as e:#-
+        # Handle exceptions gracefully#-
+        print("Error:", e)#-
+    finally:#-
+        # Return to the main options after a button press#-
+        print("\n Press any key to continue ... \n")#-
+        input()#-
+        Utils.clear()#-
+    # Return to the main options after a button press#+
+    print("\n Press any key to continue ... \n")#+
+    input()#+
+    Utils.clear()#+
 
-    return
+    return#-
 
 
+#+
 if __name__ == "__main__":
-    create_tables(cur)
+    create_tables(cur)#-
+    db.create_tables()#+
 
     Utils.clear()
 
@@ -103,7 +119,9 @@ if __name__ == "__main__":
             view()
         elif input_or_view == "e":
             Utils.clear()
-            con.close()
+            con.close()#-
+            db.close_connection()#+
+>>>>>>> Tabnine >>>>>>># {"source":"chat"}
             sys.exit()
         else:
             print("Invalid input. Please enter 'I' to input data, 'V' to view data, or 'E' to exit.")
