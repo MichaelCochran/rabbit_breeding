@@ -2,22 +2,22 @@ import modules
 
 def later_date(input_date, days):
     # Convert input_date string to a datetime object
-    input_date = datetime.strptime(input_date, "%B %d")
+    input_date = modules.datetime.strptime(input_date, "%B %d")
     # Add the specified number of days to the input_date
-    later_date = input_date + timedelta(days=days)
+    later_date = input_date + modules.timedelta(days=days)
     # Return the later date as a string
     return later_date.strftime("%B %d")
 
 # Outputs the information stored in the database
 def view():
     print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
-    rows = db.view_data()
+    rows = modules.db.view_data()
     for row in rows:
         print("\t".join(str(cell) for cell in row))
     print("\n")
 
 def gather_data():
-    Utils.clear()
+    modules.Utils.clear()
     print("Please enter the following information.")
 
     # Define questions and corresponding keys
@@ -41,11 +41,11 @@ def gather_data():
     print(palpatating, nest, due)
 
     # Insert data
-    db.insert_data(data["name"], data["bred"], data["buck"], palpatating, nest, due, data["comments"])
+    modules.db.insert_data(data["name"], data["bred"], data["buck"], palpatating, nest, due, data["comments"])
     
     # Return to the main options after a button press
     print("\n Press any key to continue ... \n")
     input()
-    Utils.clear()
+    modules.Utils.clear()
 
 

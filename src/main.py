@@ -1,10 +1,10 @@
 import modules
+from breeding import gather_data, view
 
-db = DatabaseHelper("rabbits.db")
 
-db.create_tables()
+modules.db.create_tables()
 
-Utils.clear()
+modules.Utils.clear()
 
 # Print blank line before anything happens and then look for input for view or input data and call appropriate function
 print("")
@@ -15,8 +15,8 @@ while True:
     # Define a dictionary of actions corresponding to user inputs
     actions = {
         'i': lambda: gather_data(),  # If 'i' is entered, call gather_data function
-        'v': lambda: (Utils.clear(), view()),  # If 'v' is entered, clear screen and call view function
-        'e': lambda: (Utils.clear(), db.close_connection(), sys.exit())  # If 'e' is entered, clear screen, close DB connection, and exit
+        'v': lambda: (modules.Utils.clear(), view()),  # If 'v' is entered, clear screen and call view function
+        'e': lambda: (modules.Utils.clear(), modules.db.close_connection(), modules.sys.exit())  # If 'e' is entered, clear screen, close DB connection, and exit
     }
 
     # Get the corresponding action for the user input, or None if input is invalid
