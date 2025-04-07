@@ -1,7 +1,6 @@
 import modules
 from breeding import gather_data, view
 
-
 modules.db.create_tables()
 
 modules.Utils.clear()

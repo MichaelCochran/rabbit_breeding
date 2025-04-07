@@ -23,7 +23,7 @@ def gather_data():
     # Define questions and corresponding keys
     questions = {
         "name": "What is the name of the doe? ",
-        "bred": "What date was she bred? (Month and day, ex. May 5) ",
+        "bred": "What date was she bred? (Type 'today' for today's date, or enter Month and day, ex. May 5): ",
         "buck": "Which buck was bred? ",
         "comments": "What other comments do you have? "
     }
@@ -31,7 +31,15 @@ def gather_data():
     # Gather data
     data = {}
     for key, question in questions.items():
-        data[key] = input(question)
+        if key == "bred":
+            response = input(question).strip().lower()
+            if response == "today":
+                # Get today's date in "Month Day" format, e.g., "April 6"
+                data[key] = modules.datetime.now().strftime("%B %d")
+            else:
+                data[key] = response
+        else:
+            data[key] = input(question)       
 
     # Calculate dates
     palpatating, nest, due = later_date(data["bred"], 15), later_date(data["bred"], 27), later_date(data["bred"], 31)
