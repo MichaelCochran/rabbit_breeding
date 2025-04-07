@@ -10,10 +10,21 @@ def later_date(input_date, days):
 
 # Outputs the information stored in the database
 def view():
-    print("Female\tBreed Date\tBuck\tPalpate\tNest Box\tKindling Date\tComments")
+    headers = ["Female", "Breed Date", "Buck", "Palpate", "Nest Box", "Kindling Date", "Comments"]
+
+    # Define a fixed width for each column (adjust these as needed)
+    col_widths = [10, 15, 10, 15, 15, 15, 30]
+
+    # Print headers
+    header_row = "".join(header.ljust(width) for header, width in zip(headers, col_widths))
+    print(header_row)
+    print("-" * sum(col_widths))  # separator line
+
     rows = modules.db.view_data()
     for row in rows:
-        print("\t".join(str(cell) for cell in row))
+        formatted_row = "".join(str(cell).ljust(width) for cell, width in zip(row, col_widths))
+        print(formatted_row)
+
     print("\n")
 
 def gather_data():
