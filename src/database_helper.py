@@ -33,3 +33,10 @@ class DatabaseHelper:
 
     def close_connection(self):
         self.conn.close()
+        
+    def delete_data(self, name, last_bred):
+        try:
+            self.cur.execute("DELETE FROM rabbits WHERE name = ? and last_bred = ?", (name, last_bred))
+            self.conn.commit()
+        except Exception as e:
+            print("Error:", e)

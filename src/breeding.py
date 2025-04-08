@@ -67,4 +67,15 @@ def gather_data():
     input()
     modules.Utils.clear()
 
-
+def delete_data():
+    modules.Utils.clear()
+    print("Please enter the name of the doe you want to delete: ")
+    name = input().strip()
+    date = input("Please enter the date of the breeding (Month Day): ").strip()
+    modules.db.delete_data(name, date)
+    print(f"Data for {name} on {date} has been deleted.")
+    
+    # Return to the main options after a button press
+    print("\n Press any key to continue ... \n")
+    input()
+    modules.Utils.clear()
