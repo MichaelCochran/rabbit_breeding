@@ -1,5 +1,5 @@
 import modules
-from breeding import gather_data, view
+from breeding import gather_data, view, delete_data
 
 modules.db.create_tables()
 
@@ -9,12 +9,13 @@ modules.Utils.clear()
 print("")
 while True:
     # Prompt the user for input and convert it to lowercase
-    input_or_view = input("Would you like to Input data, View data, or Exit? (I/V/E) ").lower()
+    input_or_view = input("Would you like to Input, View, Delete, or Exit? (I/V/E) ").lower()
 
     # Define a dictionary of actions corresponding to user inputs
     actions = {
         'i': lambda: gather_data(),  # If 'i' is entered, call gather_data function
         'v': lambda: (modules.Utils.clear(), view()),  # If 'v' is entered, clear screen and call view function
+        'd': lambda: (modules.Utils.clear(), delete_data()),  # If 'd' is entered, clear screen and call delete_data function
         'e': lambda: (modules.Utils.clear(), modules.db.close_connection(), modules.sys.exit())  # If 'e' is entered, clear screen, close DB connection, and exit
     }
 
