@@ -79,3 +79,29 @@ def delete_data():
     print("\n Press any key to continue ... \n")
     input()
     modules.Utils.clear()
+    
+def input_and_handle_entry():
+    while True:
+        print("\nWhat data would you like to enter?")
+        print("(\033[4mA\033[0mnimals, \033[4mM\033[0mating, \033[4mG\033[0mrowth, \033[4mH\033[0mealth, \033[4mB\033[0mehavioral, \033[4mE\033[0mconomics, \033[4mE\033[0mxit to main menu)")
+
+        sub_input = input("Enter your choice: ").lower()
+
+        if sub_input == 'x':
+            print("\nReturning to main menu...\n")
+            break  # Exit back to the main input loop
+
+        sub_actions = {
+            'a': lambda: (modules.Utils.clear(), animals()),
+            'm': lambda: (modules.Utils.clear(), mating()),
+            'g': lambda: (modules.Utils.clear(), growth()),
+            'h': lambda: (modules.Utils.clear(), health()),
+            'b': lambda: (modules.Utils.clear(), behavioral()),
+            'e': lambda: (modules.Utils.clear(), economics()),
+        }
+
+        sub_action = sub_actions.get(sub_input)
+        if sub_action:
+            sub_action()
+        else:
+            print("Invalid input. Please try again or press 'X' to return to the main menu.")

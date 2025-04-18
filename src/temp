@@ -1,0 +1,50 @@
+AnimalID INT PRIMARY KEY,
+AnimalName VARCHAR(50),
+Species VARCHAR(50),
+Age INT,
+HealthStatus VARCHAR(50),
+BirthWeight FLOAT,
+ParentID1 INT,
+ParentID2 INT,
+FOREIGN KEY (ParentID1) REFERENCES Animals(AnimalID),
+FOREIGN KEY (ParentID2) REFERENCES Animals(AnimalID)
+
+PairID INT PRIMARY KEY,
+MaleAnimalID INT,
+FemaleAnimalID INT,
+MatingDates DATE,
+ConceptionRates FLOAT,
+LitterSize INT,
+StillbirthRate FLOAT,
+FOREIGN KEY (MaleAnimalID) REFERENCES Animals(AnimalID),
+FOREIGN KEY (FemaleAnimalID) REFERENCES Animals(AnimalID)
+
+AnimalID INT PRIMARY KEY,
+GrowthRate FLOAT,
+FeedConversionRatio FLOAT,
+MilkProductionQuantity FLOAT,
+ProductQuality VARCHAR(50),
+LongevityLifespan INT,
+LongevityProductiveYears INT,
+WasteProduction FLOAT,
+FOREIGN KEY (AnimalID) REFERENCES Animals(AnimalID)
+        
+HealthID INT PRIMARY KEY,
+AnimalID INT,
+DiseaseOccurrences VARCHAR(255),
+VeterinaryInterventions VARCHAR(255),
+MortalityRates FLOAT,
+FOREIGN KEY (AnimalID) REFERENCES Animals(AnimalID)
+
+BehaviorID INT PRIMARY KEY,
+AnimalID INT,
+SignsOfStress VARCHAR(255),
+FOREIGN KEY (AnimalID) REFERENCES Animals(AnimalID)
+        
+EconomicID INT PRIMARY KEY,
+AnimalID INT,
+FeedCosts FLOAT,
+HealthcareCosts FLOAT,
+OverallMaintenanceCosts FLOAT,
+RevenueEarned FLOAT,
+FOREIGN KEY (AnimalID) REFERENCES Animals(AnimalID)

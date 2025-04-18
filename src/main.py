@@ -1,22 +1,22 @@
 import modules
-from breeding import gather_data, view, delete_data
+from breeding import gather_data, view, delete_data, input_and_handle_entry #, economics, mating, growth, health, behavioral, animals
 
 modules.db.create_tables()
 
 modules.Utils.clear()
 
-# Print blank line before anything happens and then look for input for view or input data and call appropriate function
+# Print blank line before anything happens and then look for input and call appropriate function
 print("")
 while True:
     # Prompt the user for input and convert it to lowercase
-    input_or_view = input("Would you like to Input, View, Delete, or Exit? (I/V/E) ").lower()
+    input_or_view = input("Would you like to \033[4mI\033[0mnput, \033[4mV\033[0miew, \033[4mD\033[0melete, or E\033[4mx\033[0mit? ").lower()
 
     # Define a dictionary of actions corresponding to user inputs
     actions = {
-        'i': lambda: gather_data(),  # If 'i' is entered, call gather_data function
-        'v': lambda: (modules.Utils.clear(), view()),  # If 'v' is entered, clear screen and call view function
-        'd': lambda: (modules.Utils.clear(), delete_data()),  # If 'd' is entered, clear screen and call delete_data function
-        'e': lambda: (modules.Utils.clear(), modules.db.close_connection(), modules.sys.exit())  # If 'e' is entered, clear screen, close DB connection, and exit
+        'i': lambda: (modules.Utils.clear(), input_and_handle_entry()),
+        'v': lambda: (modules.Utils.clear(), view()),
+        'd': lambda: (modules.Utils.clear(), delete_data()),
+        'x': lambda: (modules.Utils.clear(), modules.db.close_connection(), modules.sys.exit()),
     }
 
     # Get the corresponding action for the user input, or None if input is invalid
@@ -26,4 +26,5 @@ while True:
         action()
     else:
         # If input is invalid, display an error message
-        print("Invalid input. Please enter 'I' to input data, 'V' to view data, or 'E' to exit.")
+        print("Invalid input. Please etry again.")
+
